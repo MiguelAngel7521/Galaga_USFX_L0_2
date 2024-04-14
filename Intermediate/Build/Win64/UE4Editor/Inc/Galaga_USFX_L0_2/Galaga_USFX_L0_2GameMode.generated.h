@@ -58,7 +58,11 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGalaga_USFX_L0_2GameMode)
 
 
-#define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_Galaga_USFX_L0_2GameMode_h_12_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_Galaga_USFX_L0_2GameMode_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ClaseNaveEnemigaCaza() { return STRUCT_OFFSET(AGalaga_USFX_L0_2GameMode, ClaseNaveEnemigaCaza); } \
+	FORCEINLINE static uint32 __PPO__ClaseNaveEnemigaTransporte() { return STRUCT_OFFSET(AGalaga_USFX_L0_2GameMode, ClaseNaveEnemigaTransporte); }
+
+
 #define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_Galaga_USFX_L0_2GameMode_h_9_PROLOG
 #define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_Galaga_USFX_L0_2GameMode_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

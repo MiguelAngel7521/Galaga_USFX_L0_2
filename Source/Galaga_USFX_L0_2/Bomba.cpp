@@ -25,7 +25,8 @@ ABomba::ABomba()
 void ABomba::BeginPlay()
 {
 	Super::BeginPlay();
-
+	// Spawnea un nuevo actor Bomba en la ubicación del actor actual
+	
 	GetWorld()->GetTimerManager().SetTimer(ManejadorTemporizador_DestruirBomba, this, &ABomba::DestruirBomba, 3.0f, false);
 	
 }

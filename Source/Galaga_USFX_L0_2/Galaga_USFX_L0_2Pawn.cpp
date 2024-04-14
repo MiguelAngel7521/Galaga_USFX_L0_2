@@ -63,12 +63,14 @@ void AGalaga_USFX_L0_2Pawn::SetupPlayerInputComponent(class UInputComponent* Pla
 	
 	check(PlayerInputComponent);
 	// set up gameplay key bindings
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(MoveForwardBinding);
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
 	PlayerInputComponent->BindAction("Spawn Bomba", IE_Pressed, this, &AGalaga_USFX_L0_2Pawn::SpawnBomba);
 	UE_LOG(LogTemp, Warning, TEXT("Player Input Component Set"));
+	
 	
 	
 }
@@ -109,7 +111,7 @@ void AGalaga_USFX_L0_2Pawn::Tick(float DeltaSeconds)
 	FireShot(FireDirection);
 	if (!bBombaSpawned)
 	{
-		FVector PosicionPrueba = FVector(0, 0, 0);
+		FVector PosicionPrueba = FVector(0.0f, -400.0f, 100);
 		ABomba* NuevaBomba = GetWorld()->SpawnActor<ABomba>(ABomba::StaticClass(),PosicionPrueba, FRotator::ZeroRotator);
 		if (NuevaBomba) {
 			UE_LOG(LogTemp, Warning, TEXT("Bomba Spawned"));
@@ -120,6 +122,7 @@ void AGalaga_USFX_L0_2Pawn::Tick(float DeltaSeconds)
 			UE_LOG(LogTemp, Warning, TEXT("Bomba not spawned"));
 		}
 	}
+	
 }
 
 void AGalaga_USFX_L0_2Pawn::FireShot(FVector FireDirection)
@@ -162,17 +165,18 @@ void AGalaga_USFX_L0_2Pawn::ShotTimerExpired()
 
 void AGalaga_USFX_L0_2Pawn::SpawnBomba()
 {
-	UE_LOG(LogTemp, Warning, TEXT("SpawnBomba function called"));
+
 	if (bBombaSpawned == false) {
 		if (GetWorld())
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Spawning Bomba"));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bomba Spawned"));
 			FVector SpawnLocation = GetActorLocation();
 			FRotator SpawnRotation = GetActorRotation();
 
 			// Utiliza la variable BombaClass para instanciar el objeto ABomba
 			ABomba* NuevaBomba = GetWorld()->SpawnActor<ABomba>(BombaClass, SpawnLocation, SpawnRotation);
-
+			// Spawnea un nuevo actor Bomba en la ubicación del actor actual
+			
 			if (NuevaBomba)
 			{
 				NuevaBomba->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
@@ -180,7 +184,7 @@ void AGalaga_USFX_L0_2Pawn::SpawnBomba()
 			}
 			else
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Failed to spawn Bomba"));
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bomba not Spawned"));
 			}
 		}
 	}
