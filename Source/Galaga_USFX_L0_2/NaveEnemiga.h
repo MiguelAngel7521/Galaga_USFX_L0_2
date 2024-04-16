@@ -62,8 +62,20 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+public:
+	int32 DanioEnemigo = 5;
+
+	// Función para causar daño al jugador
+	void InfligirDanio(AActor* ActorAfectado);
+	FVector GunOffset;
+	float FireRate;
+	bool bCanFire;
 
 protected:
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
+	UPROPERTY(EditAnywhere, Category = "Proyectil")
+	TSubclassOf<class AGalaga_USFX_L0_2Projectile> ProyectilClass;
+
+	virtual void Disparar(FVector FireDirection);
 
 };

@@ -8,6 +8,9 @@ void ANaveEnemigaTransporte::Tick(float DeltaTime)
 }
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
+	// En AProjectileEnemigo::BeginPlay o en su constructor
+	
+
     static ConstructorHelpers::FObjectFinder<UStaticMesh>Mesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane'"));
 	mallaNaveEnemiga->SetStaticMesh(Mesh.Object);
 	TiempoDescarga = 10;

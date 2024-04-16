@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANaveEnemiga)
 
 
-#define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_NaveEnemiga_h_12_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_NaveEnemiga_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ProyectilClass() { return STRUCT_OFFSET(ANaveEnemiga, ProyectilClass); }
+
+
 #define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_NaveEnemiga_h_9_PROLOG
 #define Galaga_USFX_L0_2_Source_Galaga_USFX_L0_2_NaveEnemiga_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

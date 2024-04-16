@@ -2,6 +2,10 @@
 
 
 #include "NaveEnemiga.h"
+#include "Galaga_USFX_L0_2Pawn.h"
+#include "Galaga_USFX_L0_2Projectile.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "ProjectileEnemigo.h"
 
 // Sets default values
 ANaveEnemiga::ANaveEnemiga()
@@ -13,6 +17,10 @@ ANaveEnemiga::ANaveEnemiga()
 	RootComponent = mallaNaveEnemiga;
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 
+	GunOffset = FVector(90.f, 0.f, 0.f);
+	FireRate = 0.1f;
+	bCanFire = true;
+
 }
 
 // Called when the game starts or when spawned
@@ -22,10 +30,52 @@ void ANaveEnemiga::BeginPlay()
 	
 }
 
+
 // Called every frame
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	TArray<AActor*> ActoresColisionando;
+	GetOverlappingActors(ActoresColisionando, AGalaga_USFX_L0_2Pawn::StaticClass());
+
+	for (AActor* ActorColisionando : ActoresColisionando)
+	{
+		InfligirDanio(ActorColisionando);
+	}
+
+	// Lógica 
+
+
+}
+void ANaveEnemiga::InfligirDanio(AActor* ActorAfectado)
+{
+	AGalaga_USFX_L0_2Pawn* Jugador = Cast<AGalaga_USFX_L0_2Pawn>(ActorAfectado);
+
+	if (Jugador)
+	{
+		Jugador->RecibirDanio(DanioEnemigo);
+	}
+}
+void ANaveEnemiga::Disparar(FVector FireDirection)
+{
+	if (GetWorld())
+	{
+		FVector SpawnLocation = GetActorLocation();
+		FRotator SpawnRotation = GetActorRotation();
+		SpawnLocation.X -= 200;
+
+		AProjectileEnemigo* NuevoProyectil = GetWorld()->SpawnActor<AProjectileEnemigo>(AProjectileEnemigo::StaticClass(), SpawnLocation, SpawnRotation);
+
+		if (NuevoProyectil)
+		{
+			
+			
+			NuevoProyectil->ProjectileMovement->InitialSpeed = 2000.f;
+
+		
+			NuevoProyectil->SetOwner(this);
+		}
+	}
 }
 

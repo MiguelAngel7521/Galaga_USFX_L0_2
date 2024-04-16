@@ -41,6 +41,15 @@ public:
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
 
+
+
+
+	float ReturnSpeed;
+	class AGalaga_USFX_L0_2Pawn* OwningPlayer;
+
+
+
+
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
@@ -74,6 +83,18 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	void SpawnBomba();
+
+
+	// Variables para las vidas y la energía del jugador
+	int32 VidasJugador = 3;
+	int32 EnergiaJugador = 10;
+
+	// Funciones para manejar el daño del enemigo y la energía del jugador
+	void RecibirDanio(int32 CantidadDanio);
+	void ReducirEnergia(int32 Cantidad);
+
+
+
 private:
 	// Manejador de temporizador para la vida útil de la bomba
 	FTimerHandle ManejadorTemporizador_DestruirBomba;

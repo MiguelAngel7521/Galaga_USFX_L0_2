@@ -60,6 +60,7 @@ protected:
 
 private:
 	FTimerHandle ManejadorTemporizador;
+
 };
 
 

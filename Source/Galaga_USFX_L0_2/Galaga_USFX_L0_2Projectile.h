@@ -33,5 +33,23 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetProjectileMesh() const { return ProjectileMesh; }
 	/** Returns ProjectileMovement subobject **/
 	FORCEINLINE UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+
+
+
+
+	// Velocidad de retorno del proyectil
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Projectile")
+	//float ReturnSpeed;
+
+	//// Referencia al actor del jugador
+	//UPROPERTY()
+	//class AGalaga_USFX_L0_2Pawn* OwningPlayer;
+
+	// Constructor
+	
+
+	// Método para configurar la velocidad de retorno
+	/*void SetReturnSpeed(float Speed);*/
+
 };
 

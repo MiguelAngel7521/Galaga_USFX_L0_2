@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 	GALAGA_USFX_L0_2_API UClass* Z_Construct_UClass_ANaveEnemigaCaza();
 	GALAGA_USFX_L0_2_API UClass* Z_Construct_UClass_ANaveEnemiga();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_L0_2();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	GALAGA_USFX_L0_2_API UClass* Z_Construct_UClass_AProjectileEnemigo_NoRegister();
 // End Cross Module References
 	void ANaveEnemigaCaza::StaticRegisterNativesANaveEnemigaCaza()
 	{
@@ -31,6 +33,15 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProyectilEnemigoClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ProyectilEnemigoClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FireRate;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +56,24 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 		{ "ModuleRelativePath", "NaveEnemigaCaza.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_ProyectilEnemigoClass_MetaData[] = {
+		{ "Category", "Proyectil" },
+		{ "ModuleRelativePath", "NaveEnemigaCaza.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_ProyectilEnemigoClass = { "ProyectilEnemigoClass", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigaCaza, ProyectilEnemigoClass), Z_Construct_UClass_AProjectileEnemigo_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_ProyectilEnemigoClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_ProyectilEnemigoClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_FireRate_MetaData[] = {
+		{ "Category", "Proyectil" },
+		{ "ModuleRelativePath", "NaveEnemigaCaza.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_FireRate = { "FireRate", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigaCaza, FireRate), METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_FireRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_FireRate_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigaCaza_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_ProyectilEnemigoClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_FireRate,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigaCaza_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigaCaza>::IsAbstract,
 	};
@@ -54,11 +83,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ANaveEnemigaCaza_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaCaza_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaCaza_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaCaza_Statics::Class_MetaDataParams))
@@ -72,7 +101,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaCaza, 2572565187);
+	IMPLEMENT_CLASS(ANaveEnemigaCaza, 586222515);
 	template<> GALAGA_USFX_L0_2_API UClass* StaticClass<ANaveEnemigaCaza>()
 	{
 		return ANaveEnemigaCaza::StaticClass();

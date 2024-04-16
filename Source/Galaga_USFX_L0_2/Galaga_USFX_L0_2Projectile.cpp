@@ -31,6 +31,13 @@ AGalaga_USFX_L0_2Projectile::AGalaga_USFX_L0_2Projectile()
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
+
+
+	// Inicialización de las variables
+	/*ReturnSpeed = 500.0f;
+	OwningPlayer = nullptr;*/
+
+
 }
 
 void AGalaga_USFX_L0_2Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -43,3 +50,11 @@ void AGalaga_USFX_L0_2Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* Ot
 
 	Destroy();
 }
+
+
+
+
+//void AGalaga_USFX_L0_2Projectile::SetReturnSpeed(float Speed)
+//{
+//	ReturnSpeed = Speed;
+//}

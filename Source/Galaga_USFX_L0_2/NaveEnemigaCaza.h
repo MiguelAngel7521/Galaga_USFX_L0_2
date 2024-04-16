@@ -20,6 +20,11 @@ protected:
 	float DanoRayoLaser;
 	float TiempoEntreRayosLaser;
 	virtual void BeginPlay() override;
+private:
+	TArray<FVector> SecuenciaZ;
+	int32 IndiceActual;
+	FVector Objetivo;
+	float Velocidad;
 public:
 	ANaveEnemigaCaza();
 	virtual void Tick(float DeltaTime) override;
@@ -28,6 +33,19 @@ public:
 	void DispararRayoLaser();
 	void DispararMisiles();
 	virtual void mover(float DeltaTime);
-		
+
+
+public:
+	virtual void Disparar(FVector FireDirection) override;
+
+	UPROPERTY(EditAnywhere, Category = "Proyectil")
+	TSubclassOf<class AProjectileEnemigo> ProyectilEnemigoClass;
+
+	UPROPERTY(EditAnywhere, Category = "Proyectil")
+	float FireRate;
+
+	float FireCooldown;
+
 	
+
 };
