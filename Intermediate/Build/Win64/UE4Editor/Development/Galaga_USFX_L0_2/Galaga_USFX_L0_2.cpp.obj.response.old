@@ -32,16 +32,14 @@
 /wd4244
 /wd4838
 /I .
-/I D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2
-/I D:\proyectos\Galaga_USFX_L0_2\Source
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
+/I Runtime\Engine\Classes
+/I Runtime\Engine\Public
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
 /I Runtime\CoreUObject\Public
-/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
-/I Runtime\Engine\Classes
-/I Runtime\Engine\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\NetCore
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -233,6 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
+/I D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2
+/I D:\proyectos\Galaga_USFX_L0_2\Source
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -262,11 +262,8 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2.cpp"
-/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.Galaga_USFX_L0_2.h"
+/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.h"
 /Fo"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Galaga_USFX_L0_2.cpp.obj"
 /TP
 /GR-

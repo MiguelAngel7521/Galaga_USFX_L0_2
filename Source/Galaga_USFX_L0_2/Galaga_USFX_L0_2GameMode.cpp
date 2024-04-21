@@ -8,6 +8,7 @@
 #include "TimerManager.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaEspia.h"
+#include "FabricaNaveEnemigos.h"
 
 AGalaga_USFX_L0_2GameMode::AGalaga_USFX_L0_2GameMode()
 {
@@ -117,7 +118,25 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 		TArray<ANaveEnemiga*> NavesEnemigas;
 
-		for (int q = 0; q < MaxNaves; ++q)
+
+
+
+		FString Categoria = "Terrestre"; // o "Acuatica", "Aerea", etc.
+
+		AFabricaNaveEnemigos* Fabrica = NewObject<AFabricaNaveEnemigos>();
+		if (Fabrica)
+		{
+			ANaveEnemiga* NuevaNave = Fabrica->FabricarNave(World, Categoria, ubicacionInicialNavesEnemigas, rotacionNave);
+
+			if (NuevaNave)
+			{
+				// Hacer algo con la nueva nave
+			}
+		}
+
+
+
+		/*for (int q = 0; q < MaxNaves; ++q)
 		{
 			int32 TipoNave = FMath::RandRange(0, NumTiposNaves - 1);
 
@@ -143,7 +162,11 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 						ubicacionActualNaveEnemiga.Y = 0.0f;
 					}
 					break;
-				}
+				}*/
+
+
+
+
 			//case 1: {
 			//	for (int y = 0; y < 5; y++)
 			//	{
@@ -215,8 +238,13 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 			//		  NavesEnemigas.Add(NuevaNaveEnemiga);
 			//	  }
-			}
-			}
+
+
+			//1}
+
+
+
+			//2}
 
 
 			/*FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
@@ -224,6 +252,6 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 			GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFX_L02GameMode::MostrarPosicionesNavesEnemigas, 1.0f, true); */
 
 
-		}
+		//3}
 	}
 }
