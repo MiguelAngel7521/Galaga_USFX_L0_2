@@ -94,33 +94,33 @@ void ANaveEnemigaCaza::mover(float DeltaTime)
 
 void ANaveEnemigaCaza::Disparar(FVector FireDirection)
 {
-    UE_LOG(LogTemp, Warning, TEXT("Disparando proyectil  "));
+    //UE_LOG(LogTemp, Warning, TEXT("Disparando proyectil  "));
 
-    if (GetWorld())
-    {
-      
+    //if (GetWorld())
+    //{
+    //  
 
-        FVector SpawnLocation = GetActorLocation();
-        FRotator SpawnRotation = GetActorRotation();
-        SpawnLocation.X -= 200;
+    //    FVector SpawnLocation = GetActorLocation();
+    //    FRotator SpawnRotation = GetActorRotation();
+    //    SpawnLocation.X -= 200;
 
-        AProjectileEnemigo* NuevoProyectil = GetWorld()->SpawnActor<AProjectileEnemigo>(AProjectileEnemigo::StaticClass(), SpawnLocation, SpawnRotation);
+    //    AProjectileEnemigo* NuevoProyectil = GetWorld()->SpawnActor<AProjectileEnemigo>(AProjectileEnemigo::StaticClass(), SpawnLocation, SpawnRotation);
 
-        if (NuevoProyectil)
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Proyectil creado exitosamente"));
+    //    if (NuevoProyectil)
+    //    {
+    //        UE_LOG(LogTemp, Warning, TEXT("Proyectil creado exitosamente"));
 
-            // Verificar las propiedades de ProjectileMovement
-            UE_LOG(LogTemp, Warning, TEXT("InitialSpeed: %f"), NuevoProyectil->ProjectileMovement->InitialSpeed);
-            UE_LOG(LogTemp, Warning, TEXT("MaxSpeed: %f"), NuevoProyectil->ProjectileMovement->MaxSpeed);
-            UE_LOG(LogTemp, Warning, TEXT("RotationFollowsVelocity: %d"), NuevoProyectil->ProjectileMovement->bRotationFollowsVelocity);
-            UE_LOG(LogTemp, Warning, TEXT("ProjectileGravityScale: %f"), NuevoProyectil->ProjectileMovement->ProjectileGravityScale);
-        }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Fallo al crear el proyectil"));
-        }
-    }
+    //        // Verificar las propiedades de ProjectileMovement
+    //        UE_LOG(LogTemp, Warning, TEXT("InitialSpeed: %f"), NuevoProyectil->ProjectileMovement->InitialSpeed);
+    //        UE_LOG(LogTemp, Warning, TEXT("MaxSpeed: %f"), NuevoProyectil->ProjectileMovement->MaxSpeed);
+    //        UE_LOG(LogTemp, Warning, TEXT("RotationFollowsVelocity: %d"), NuevoProyectil->ProjectileMovement->bRotationFollowsVelocity);
+    //        UE_LOG(LogTemp, Warning, TEXT("ProjectileGravityScale: %f"), NuevoProyectil->ProjectileMovement->ProjectileGravityScale);
+    //    }
+    //    else
+    //    {
+    //        UE_LOG(LogTemp, Warning, TEXT("Fallo al crear el proyectil"));
+    //    }
+    //}
 }
 
 //void ANaveEnemigaCaza::RecibirDanio(int32 CantidadDanio)

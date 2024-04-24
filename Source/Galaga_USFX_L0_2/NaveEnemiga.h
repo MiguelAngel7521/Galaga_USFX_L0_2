@@ -71,8 +71,7 @@ public:
 	float FireRate;
 	bool bCanFire;
 
-	 void Mostrar() PURE_VIRTUAL(ANaveEnemiga::Mostrar);
-	static ANaveEnemiga* FabricarNaveEnemiga(const FString& tipo);
+
 
 
 

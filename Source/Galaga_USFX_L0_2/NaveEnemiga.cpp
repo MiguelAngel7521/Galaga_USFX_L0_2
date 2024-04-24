@@ -80,25 +80,4 @@ void ANaveEnemiga::Disparar(FVector FireDirection)
 	}
 }
 
-ANaveEnemiga* ANaveEnemiga::FabricarNaveEnemiga(const FString& tipo)
-{
-	if (tipo == "Caza")
-	{
-		ANaveEnemiga* nuevaNave = NewObject<ANaveEnemiga>(); // Cambia esto a la clase 
-		nuevaNave->SetNombre("Caza");
-		
-		return nuevaNave;
-	}
-	else if (tipo == "Transporte")
-	{
-		ANaveEnemiga* nuevaNave = NewObject<ANaveEnemiga>(); 
-		nuevaNave->SetNombre("Transporte");
-		
-		return nuevaNave;
-	}
-	
-	else
-	{
-		return nullptr; 
-	}
-}
+

@@ -8,6 +8,7 @@
 #include "TimerManager.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaEspia.h"
+#include "FabricaNaveEnemigas.h"
 
 
 AGalaga_USFX_L0_2GameMode::AGalaga_USFX_L0_2GameMode()
@@ -96,7 +97,7 @@ void AGalaga_USFX_L0_2GameMode::CrearNavesEnemigas()
 void AGalaga_USFX_L0_2GameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, -400.0f, 500);
+	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, -400.0f, 200);
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -112,47 +113,40 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 	if (World != nullptr)
 	{
-		const int32 MaxNaves = 30;
+		const int32 MaxNaves = 15;
 		const int32 NumTiposNaves = 4; // Caza, Transporte, Espia, Nodriza
 		const int32 MaxNavesPorTipo = MaxNaves / NumTiposNaves;
 
 		TArray<ANaveEnemiga*> NavesEnemigas;
 
-		for (int i = 0; i < MaxNaves; ++i)
-		{
-			int32 TipoNave = FMath::RandRange(0, 1); // Solo he incluido dos tipos como ejemplo, puedes expandirlo
-
-			ANaveEnemiga* NuevaNaveEnemiga = ANaveEnemiga::FabricarNaveEnemiga(TipoNave == 0 ? "Caza" : "Transporte");
-
-			if (NuevaNaveEnemiga)
+			for (int i = 0; i < 10; ++i)
 			{
-				NuevaNaveEnemiga->SetNombre("Nave Enemiga " + FString::FromInt(i));
+				int32 TipoNave = FMath::RandRange(0, 1); // Random entre 0 y 3 para los 4 tipos de naves
 
-				// Configura la ubicación y rotación de la nave antes de spawnearla
+				FString NombreNave = "Nave Enemiga " + FString::FromInt(i);
+
+				ANaveEnemiga* NuevaNaveEnemiga = AFabricaNaveEnemigas::FabricarNave(TipoNave == 0 ? "Caza" : TipoNave == 1 ? "Transporte" : TipoNave == 2 ? "Espia" : "Nodriza", this);
+
+				if (NuevaNaveEnemiga)
+				{
+					NuevaNaveEnemiga->SetNombre(NombreNave);
+					NuevaNaveEnemiga->SetActorLocation(ubicacionInicialNavesEnemigas);
+					NuevaNaveEnemiga->SetActorRotation(rotacionNave);
+					NuevaNaveEnemiga->FinishSpawning(FTransform(rotacionNave, ubicacionInicialNavesEnemigas));
+
+					World->SpawnActor(NuevaNaveEnemiga->GetClass(), &ubicacionInicialNavesEnemigas, &rotacionNave);
 
 
-				NuevaNaveEnemiga->SetActorLocation(ubicacionInicialNavesEnemigas);
-				NuevaNaveEnemiga->SetActorRotation(rotacionNave);
-
-				FTransform TransformacionNuevaNaveEnemiga = FTransform(rotacionNave, ubicacionInicialNavesEnemigas);
-
-				NuevaNaveEnemiga->SetActorTransform(TransformacionNuevaNaveEnemiga);
-				NuevaNaveEnemiga->FinishSpawning(TransformacionNuevaNaveEnemiga);
-
-				AActor* SpawnedActor = World->SpawnActor(NuevaNaveEnemiga->GetClass(), &TransformacionNuevaNaveEnemiga);
-				if (SpawnedActor) {
-					NavesEnemigas.Add(Cast<ANaveEnemiga>(SpawnedActor));
-					UE_LOG(LogTemp, Warning, TEXT("Nave enemiga %s creada"), *NuevaNaveEnemiga->GetNombre());
+					ubicacionActualNaveEnemiga.Y += 200.0f;
+					ubicacionActualNaveEnemiga.X = 0.0f;
+					ubicacionActualNaveEnemiga.Z = 200.0f;
 				}
-				else {
-					UE_LOG(LogTemp, Warning, TEXT("No se pudo spawnear la nave enemiga %s"), *NuevaNaveEnemiga->GetNombre());
+				else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga %s"), *NombreNave);
 				}
 			}
-			else {
-								UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga %s"), *NuevaNaveEnemiga->GetNombre());
-			}
-			
-		}
+		
 		
 
 
