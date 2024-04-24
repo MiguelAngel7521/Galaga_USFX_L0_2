@@ -6,6 +6,8 @@
 #include "Galaga_USFX_L0_2Projectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "ProjectileEnemigo.h"
+#include "NaveEnemigaCaza.h"
+#include "NaveEnemigaTransporte.h"
 
 // Sets default values
 ANaveEnemiga::ANaveEnemiga()
@@ -78,3 +80,25 @@ void ANaveEnemiga::Disparar(FVector FireDirection)
 	}
 }
 
+ANaveEnemiga* ANaveEnemiga::FabricarNaveEnemiga(const FString& tipo)
+{
+	if (tipo == "Caza")
+	{
+		ANaveEnemiga* nuevaNave = NewObject<ANaveEnemiga>(); // Cambia esto a la clase específica si tienes una para Caza
+		nuevaNave->SetNombre("Caza");
+		// Configura otros atributos específicos para NaveEnemigaCaza
+		return nuevaNave;
+	}
+	else if (tipo == "Transporte")
+	{
+		ANaveEnemiga* nuevaNave = NewObject<ANaveEnemiga>(); // Cambia esto a la clase específica si tienes una para Transporte
+		nuevaNave->SetNombre("Transporte");
+		// Configura otros atributos específicos para NaveEnemigaTransporte
+		return nuevaNave;
+	}
+	// Agrega más condiciones según tus necesidades para otros tipos de naves
+	else
+	{
+		return nullptr; // Tipo de nave desconocido
+	}
+}

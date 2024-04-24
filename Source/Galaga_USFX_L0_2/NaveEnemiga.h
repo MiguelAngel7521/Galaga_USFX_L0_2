@@ -71,6 +71,11 @@ public:
 	float FireRate;
 	bool bCanFire;
 
+	 void Mostrar() PURE_VIRTUAL(ANaveEnemiga::Mostrar);
+	static ANaveEnemiga* FabricarNaveEnemiga(const FString& tipo);
+
+
+
 protected:
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
 	UPROPERTY(EditAnywhere, Category = "Proyectil")

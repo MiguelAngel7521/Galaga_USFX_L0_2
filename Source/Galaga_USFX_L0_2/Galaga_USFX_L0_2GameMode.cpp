@@ -8,7 +8,7 @@
 #include "TimerManager.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaEspia.h"
-#include "FabricaNaveEnemigos.h"
+
 
 AGalaga_USFX_L0_2GameMode::AGalaga_USFX_L0_2GameMode()
 {
@@ -96,7 +96,7 @@ void AGalaga_USFX_L0_2GameMode::CrearNavesEnemigas()
 void AGalaga_USFX_L0_2GameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, -400.0f, 200);
+	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, -400.0f, 500);
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -118,21 +118,43 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 		TArray<ANaveEnemiga*> NavesEnemigas;
 
-
-
-
-		FString Categoria = "Terrestre"; // o "Acuatica", "Aerea", etc.
-
-		AFabricaNaveEnemigos* Fabrica = NewObject<AFabricaNaveEnemigos>();
-		if (Fabrica)
+		for (int i = 0; i < MaxNaves; ++i)
 		{
-			ANaveEnemiga* NuevaNave = Fabrica->FabricarNave(World, Categoria, ubicacionInicialNavesEnemigas, rotacionNave);
+			int32 TipoNave = FMath::RandRange(0, 1); // Solo he incluido dos tipos como ejemplo, puedes expandirlo
 
-			if (NuevaNave)
+			ANaveEnemiga* NuevaNaveEnemiga = ANaveEnemiga::FabricarNaveEnemiga(TipoNave == 0 ? "Caza" : "Transporte");
+
+			if (NuevaNaveEnemiga)
 			{
-				// Hacer algo con la nueva nave
+				NuevaNaveEnemiga->SetNombre("Nave Enemiga " + FString::FromInt(i));
+
+				// Configura la ubicación y rotación de la nave antes de spawnearla
+
+
+				NuevaNaveEnemiga->SetActorLocation(ubicacionInicialNavesEnemigas);
+				NuevaNaveEnemiga->SetActorRotation(rotacionNave);
+
+				FTransform TransformacionNuevaNaveEnemiga = FTransform(rotacionNave, ubicacionInicialNavesEnemigas);
+
+				NuevaNaveEnemiga->SetActorTransform(TransformacionNuevaNaveEnemiga);
+				NuevaNaveEnemiga->FinishSpawning(TransformacionNuevaNaveEnemiga);
+
+				AActor* SpawnedActor = World->SpawnActor(NuevaNaveEnemiga->GetClass(), &TransformacionNuevaNaveEnemiga);
+				if (SpawnedActor) {
+					NavesEnemigas.Add(Cast<ANaveEnemiga>(SpawnedActor));
+					UE_LOG(LogTemp, Warning, TEXT("Nave enemiga %s creada"), *NuevaNaveEnemiga->GetNombre());
+				}
+				else {
+					UE_LOG(LogTemp, Warning, TEXT("No se pudo spawnear la nave enemiga %s"), *NuevaNaveEnemiga->GetNombre());
+				}
 			}
+			else {
+								UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga %s"), *NuevaNaveEnemiga->GetNombre());
+			}
+			
 		}
+		
+
 
 
 

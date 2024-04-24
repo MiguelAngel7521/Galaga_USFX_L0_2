@@ -40,12 +40,6 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Bomba.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\FabricaNaveEnemigos.cpp">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\FabricaNaveEnemigos.h">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClInclude>
     <None Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2.Build.cs">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </None>
@@ -58,9 +52,6 @@
     <None Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2.rar">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </None>
-    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2GameMode - copia.h">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2GameMode.cpp">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
@@ -77,18 +68,6 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2Projectile.h">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\NaveAcuatica.cpp">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\NaveAcuatica.h">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\NaveAerea.cpp">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\NaveAerea.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\NaveEnemiga.cpp">
@@ -119,12 +98,6 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\NaveEnemigaTransporte.h">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\NaveTerrestre.cpp">
-      <Filter>Source\Galaga_USFX_L0_2</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\NaveTerrestre.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ProjectileEnemigo.cpp">

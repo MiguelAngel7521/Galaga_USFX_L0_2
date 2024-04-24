@@ -17,3 +17,7 @@ D:\Juegos\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementC
 D:\Juegos\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
 D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\ProjectileEnemigo.h
 D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2\ProjectileEnemigo.generated.h
+D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\NaveEnemigaCaza.h
+D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2\NaveEnemigaCaza.generated.h
+D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\NaveEnemigaTransporte.h
+D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2\NaveEnemigaTransporte.generated.h
