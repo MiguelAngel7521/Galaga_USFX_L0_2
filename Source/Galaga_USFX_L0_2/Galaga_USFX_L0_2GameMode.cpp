@@ -119,33 +119,60 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 		TArray<ANaveEnemiga*> NavesEnemigas;
 
-			for (int i = 0; i < 10; ++i)
-			{
-				int32 TipoNave = FMath::RandRange(0, 1); // Random entre 0 y 3 para los 4 tipos de naves
 
-				FString NombreNave = "Nave Enemiga " + FString::FromInt(i);
+		INaveEnemigaBuilder* Builder = nullptr;
+		DirectorNaveEnemiga Director(Builder);
 
-				ANaveEnemiga* NuevaNaveEnemiga = AFabricaNaveEnemigas::FabricarNave(TipoNave == 0 ? "Caza" : TipoNave == 1 ? "Transporte" : TipoNave == 2 ? "Espia" : "Nodriza", this);
+		
+		Director.ConstruirNaveEnemiga();
+		ANaveEnemiga* NuevaNave = Director.ObtenerNaveEnemiga();
 
-				if (NuevaNaveEnemiga)
-				{
-					NuevaNaveEnemiga->SetNombre(NombreNave);
-					NuevaNaveEnemiga->SetActorLocation(ubicacionInicialNavesEnemigas);
-					NuevaNaveEnemiga->SetActorRotation(rotacionNave);
-					NuevaNaveEnemiga->FinishSpawning(FTransform(rotacionNave, ubicacionInicialNavesEnemigas));
+		
+		if (NuevaNave)
+		{
+			NuevaNave->SetActorLocation(ubicacionInicialNavesEnemigas);
+			NuevaNave->SetActorRotation(rotacionNave);
+			NuevaNave->FinishSpawning(FTransform(rotacionNave, ubicacionInicialNavesEnemigas));
+			World->SpawnActor(NuevaNave->GetClass(), &ubicacionInicialNavesEnemigas, &rotacionNave);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga"));
+		}
 
-					World->SpawnActor(NuevaNaveEnemiga->GetClass(), &ubicacionInicialNavesEnemigas, &rotacionNave);
 
 
-					ubicacionActualNaveEnemiga.Y += 200.0f;
-					ubicacionActualNaveEnemiga.X = 0.0f;
-					ubicacionActualNaveEnemiga.Z = 200.0f;
-				}
-				else
-				{
-					UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga %s"), *NombreNave);
-				}
-			}
+
+
+
+
+			//for (int i = 0; i < 10; ++i)
+			//{
+			//	int32 TipoNave = FMath::RandRange(0, 1); // Random entre 0 y 3 para los 4 tipos de naves
+
+			//	FString NombreNave = "Nave Enemiga " + FString::FromInt(i);
+
+			//	ANaveEnemiga* NuevaNaveEnemiga = AFabricaNaveEnemigas::FabricarNave(TipoNave == 0 ? "Caza" : TipoNave == 1 ? "Transporte" : TipoNave == 2 ? "Espia" : "Nodriza", this);
+
+			//	if (NuevaNaveEnemiga)
+			//	{
+			//		NuevaNaveEnemiga->SetNombre(NombreNave);
+			//		NuevaNaveEnemiga->SetActorLocation(ubicacionInicialNavesEnemigas);
+			//		NuevaNaveEnemiga->SetActorRotation(rotacionNave);
+			//		NuevaNaveEnemiga->FinishSpawning(FTransform(rotacionNave, ubicacionInicialNavesEnemigas));
+
+			//		World->SpawnActor(NuevaNaveEnemiga->GetClass(), &ubicacionInicialNavesEnemigas, &rotacionNave);
+
+
+			//		ubicacionActualNaveEnemiga.Y += 200.0f;
+			//		ubicacionActualNaveEnemiga.X = 0.0f;
+			//		ubicacionActualNaveEnemiga.Z = 200.0f;
+			//	}
+			//	else
+			//	{
+			//		UE_LOG(LogTemp, Warning, TEXT("No se pudo crear la nave enemiga %s"), *NombreNave);
+			//	}
+			//}
 		
 		
 

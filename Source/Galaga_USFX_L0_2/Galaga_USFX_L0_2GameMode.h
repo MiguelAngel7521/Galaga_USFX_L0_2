@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "NaveEnemiga.h"
+#include "NaveEnemigaCaza.h"
+#include "NaveEnemigaBuilder.h"
 #include "Galaga_USFX_L0_2GameMode.generated.h"
 
 UCLASS(MinimalAPI)
@@ -60,6 +63,28 @@ protected:
 
 private:
 	FTimerHandle ManejadorTemporizador;
+
+
+public:
+	class DirectorNaveEnemiga
+	{
+	private:
+		INaveEnemigaBuilder* Builder;
+
+	public:
+		DirectorNaveEnemiga(INaveEnemigaBuilder* builder) : Builder(builder) {}
+		~DirectorNaveEnemiga() { delete Builder; }
+
+		void ConstruirNaveEnemiga()
+		{
+			Builder->ConstruirNuevaNave();
+			Builder->ConstruirComponentesArmas();
+			Builder->ConstruirComponentesEscudos();
+			Builder->ConstruirComponentesEnergia();
+		}
+
+		ANaveEnemiga* ObtenerNaveEnemiga() { return Builder->ObtenerNaveEnemiga(); }
+	};
 
 };
 

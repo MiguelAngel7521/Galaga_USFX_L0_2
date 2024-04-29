@@ -16,9 +16,6 @@ class GALAGA_USFX_L0_2_API ANaveEnemigaEspia : public ANaveEnemiga
 public:
 
     ANaveEnemigaEspia();
-
-
-
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Nave Enemiga Espia")
     float escudo;
 
