@@ -6,6 +6,7 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Bomba.h"
 void ANaveEnemigaCaza::BeginPlay()
 {
 	Super::BeginPlay();
@@ -28,14 +29,28 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	mover(DeltaTime);
 
-   
-    // Create fire direction vector
+   /* Angulo += Speed * DeltaTime;
+    float PosicionX = GetActorLocation().X + Radio * FMath::Cos(Angulo);
+    float PosicionY = GetActorLocation().Y + Radio * FMath::Sin(Angulo);
+    FVector NuevaPosicion = FVector(PosicionX, PosicionY, GetActorLocation().Z);
+    SetActorLocation(NuevaPosicion);*/
 
-    FVector FireDirection = GetActorForwardVector();
-    Disparar(FireDirection);
-    // Actualizar el ProjectileMovement
+    // Actualizar el ProjectileMovement 
+
+    TiempoTranscurrido++;
+    if (TiempoTranscurrido > 500)
+    {
+
+        UWorld* const World = GetWorld();
+        if (World != nullptr)
+        {
+            FVector ubicacionBomba = GetActorLocation() + FVector(0.0f, 100.0f, 0.0f);
+            World->SpawnActor<ABomba>(ubicacionBomba, FRotator::ZeroRotator);
+        }
+
+        TiempoTranscurrido = 0;
+    }
    
     if (FireCooldown > 0.f)
     {
@@ -55,73 +70,44 @@ void ANaveEnemigaCaza::mover(float DeltaTime)
 
     SetActorLocation(NuevaPosicion);*/
 
-    FVector PosicionActual = GetActorLocation();
+    //FVector PosicionActual = GetActorLocation();
 
-    //  letra "Z"
-    static const TArray<FVector> Secuencia = {
-        FVector(100, 400, 200),
-        FVector(-500, -100, 200),
-        FVector(-500, 400, 200),
-        FVector(-500, 400, 200),
-        FVector(-500, -100, 200),
-        FVector(100, 400, 200),
-    
-       
-    };
+    ////  letra "Z"
+    //static const TArray<FVector> Secuencia = {
+    //    FVector(100, 400, 200),
+    //    FVector(-500, -100, 200),
+    //    FVector(-500, 400, 200),
+    //    FVector(-500, 400, 200),
+    //    FVector(-500, -100, 200),
+    //    FVector(100, 400, 200),
+    //
+    //   
+    //};
 
-    // seguir la secuencia de puntos
-    static int32 Indice = 0;
-    static FVector ObjetivoZ = Secuencia[Indice];
-    static const float Velocidadz = 100.0f;
+    //// seguir la secuencia de puntos
+    //static int32 Indice = 0;
+    //static FVector ObjetivoZ = Secuencia[Indice];
+    //static const float Velocidadz = 100.0f;
 
-    // 
-    FVector Direccion = (ObjetivoZ - PosicionActual).GetSafeNormal();
-    FVector Desplazamiento = Direccion * Velocidadz * DeltaTime;
+    //// 
+    //FVector Direccion = (ObjetivoZ - PosicionActual).GetSafeNormal();
+    //FVector Desplazamiento = Direccion * Velocidadz * DeltaTime;
 
-    // 
-    if (FVector::Dist(PosicionActual, ObjetivoZ) < 5.0f)
-    {
-        // siguiente punto de la secuencia
-        Indice = (Indice + 1) % Secuencia.Num();
-        ObjetivoZ = Secuencia[Indice];
-    }
-    else
-    {
-        
-        SetActorLocation(PosicionActual + Desplazamiento);
-    }
-}
-
-void ANaveEnemigaCaza::Disparar(FVector FireDirection)
-{
-    //UE_LOG(LogTemp, Warning, TEXT("Disparando proyectil  "));
-
-    //if (GetWorld())
+    //// 
+    //if (FVector::Dist(PosicionActual, ObjetivoZ) < 5.0f)
     //{
-    //  
-
-    //    FVector SpawnLocation = GetActorLocation();
-    //    FRotator SpawnRotation = GetActorRotation();
-    //    SpawnLocation.X -= 200;
-
-    //    AProjectileEnemigo* NuevoProyectil = GetWorld()->SpawnActor<AProjectileEnemigo>(AProjectileEnemigo::StaticClass(), SpawnLocation, SpawnRotation);
-
-    //    if (NuevoProyectil)
-    //    {
-    //        UE_LOG(LogTemp, Warning, TEXT("Proyectil creado exitosamente"));
-
-    //        // Verificar las propiedades de ProjectileMovement
-    //        UE_LOG(LogTemp, Warning, TEXT("InitialSpeed: %f"), NuevoProyectil->ProjectileMovement->InitialSpeed);
-    //        UE_LOG(LogTemp, Warning, TEXT("MaxSpeed: %f"), NuevoProyectil->ProjectileMovement->MaxSpeed);
-    //        UE_LOG(LogTemp, Warning, TEXT("RotationFollowsVelocity: %d"), NuevoProyectil->ProjectileMovement->bRotationFollowsVelocity);
-    //        UE_LOG(LogTemp, Warning, TEXT("ProjectileGravityScale: %f"), NuevoProyectil->ProjectileMovement->ProjectileGravityScale);
-    //    }
-    //    else
-    //    {
-    //        UE_LOG(LogTemp, Warning, TEXT("Fallo al crear el proyectil"));
-    //    }
+    //    // siguiente punto de la secuencia
+    //    Indice = (Indice + 1) % Secuencia.Num();
+    //    ObjetivoZ = Secuencia[Indice];
+    //}
+    //else
+    //{
+    //    
+    //    SetActorLocation(PosicionActual + Desplazamiento);
     //}
 }
+
+
 
 //void ANaveEnemigaCaza::RecibirDanio(int32 CantidadDanio)
 //{
@@ -157,6 +143,20 @@ void ANaveEnemigaCaza::DispararMisiles()
 	{
 		//Disparar misiles
 		NumeroMisiles--;
+	}
+}
+void ANaveEnemigaCaza::FireProjectile()
+{
+    if (FireCooldown <= 0.f)
+    {
+		UWorld* const World = GetWorld();
+        if (World != nullptr)
+            {
+            FVector SpawnLocation = GetActorLocation();
+            SpawnLocation.X -= 200.0f;
+			World->SpawnActor<AProjectileEnemigo>(ProyectilEnemigoClass, GetActorLocation(), GetActorRotation());
+		}
+		FireCooldown = FireRate;
 	}
 }
 

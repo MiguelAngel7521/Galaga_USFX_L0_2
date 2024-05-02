@@ -1,3 +1,11 @@
 D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.Galaga_USFX_L0_2.h
 D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\Bomba.h
 D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2\Bomba.generated.h
+D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2Pawn.h
+D:\Juegos\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+D:\Juegos\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+D:\Juegos\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+D:\Juegos\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+D:\Juegos\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+D:\Juegos\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L0_2\Galaga_USFX_L0_2Pawn.generated.h

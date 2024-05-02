@@ -15,20 +15,25 @@ public:
     // Sets default values for this actor's properties
     ABomba();
 
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-    UStaticMeshComponent* mallaBomba;
-
-    // Se llama cada fotograma
-    virtual void Tick(float DeltaTime) override;
-
-    // Función para manejar la destrucción de la bomba
-    void DestruirBomba();
-
-protected:
-    // Se llama cuando el juego comienza o cuando se crea el actor
-    virtual void BeginPlay() override;
-
 private:
-    // Manejador de temporizador para la vida útil de la bomba
-    FTimerHandle ManejadorTemporizador_DestruirBomba;
+	float tiempoExplosion;
+	float velocidad;
+	float danoProducido;
+	float valorDestruccion;
+	float tiempoDisparo;
+	FVector posicion;
+
+
+public:
+
+	FORCEINLINE float GetTiempoExplosion() const { return tiempoExplosion; }
+
+	FORCEINLINE void SetTiempoExplosion(float _tiempoExplosion) { tiempoExplosion = _tiempoExplosion; }
+
+public:
+
+	virtual void Tick(float DeltaTime) override;
+	void Mover(float DeltaTime);
+	void Explotar();
+
 };

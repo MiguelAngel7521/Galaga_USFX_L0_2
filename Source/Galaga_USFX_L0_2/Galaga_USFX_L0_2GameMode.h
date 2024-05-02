@@ -7,6 +7,7 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.h"
 #include "NaveEnemigaBuilder.h"
+#include "CazaBuilder.h"
 #include "Galaga_USFX_L0_2GameMode.generated.h"
 
 UCLASS(MinimalAPI)
@@ -72,8 +73,8 @@ public:
 		INaveEnemigaBuilder* Builder;
 
 	public:
-		DirectorNaveEnemiga(INaveEnemigaBuilder* builder) : Builder(builder) {}
-		~DirectorNaveEnemiga() { delete Builder; }
+		/*DirectorNaveEnemiga(INaveEnemigaBuilder* builder) : Builder(builder) {}
+		~DirectorNaveEnemiga() { delete Builder; }*/
 
 		void ConstruirNaveEnemiga()
 		{

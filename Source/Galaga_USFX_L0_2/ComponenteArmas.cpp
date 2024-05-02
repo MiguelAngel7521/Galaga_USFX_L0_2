@@ -15,6 +15,27 @@ void AComponenteArmas::DispararNave(ANaveEnemiga* Nave)
 {
 }
 
+void AComponenteArmas::ConstruirNuevaNave()
+{
+}
+
+void AComponenteArmas::ConstruirComponentesArmas()
+{
+}
+
+void AComponenteArmas::ConstruirComponentesEscudos()
+{
+}
+
+void AComponenteArmas::ConstruirComponentesEnergia()
+{
+}
+
+ANaveEnemiga* AComponenteArmas::ObtenerNaveEnemiga()
+{
+	return nullptr;
+}
+
 // Called when the game starts or when spawned
 void AComponenteArmas::BeginPlay()
 {

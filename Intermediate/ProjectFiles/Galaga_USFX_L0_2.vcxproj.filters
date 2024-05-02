@@ -139,5 +139,6 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ProjectileEnemigo.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

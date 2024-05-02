@@ -24,4 +24,29 @@ void ACazaBuilder::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+void ACazaBuilder::ConstruirNuevaNave()
+{
+	NaveEnemiga =GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass());
+	NaveEnemiga->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
+	if (!NaveEnemiga) {
+		UE_LOG(LogTemp, Warning, TEXT("No se pudo construir la nave"));	
+	}
+}
+
+void ACazaBuilder::ConstruirComponentesArmas()
+{
+}
+
+void ACazaBuilder::ConstruirComponentesEscudos()
+{
+}
+
+void ACazaBuilder::ConstruirComponentesEnergia()
+{
+}
+
+ANaveEnemiga* ACazaBuilder::ObtenerNaveEnemiga()
+{
+	return nullptr;
+}
 

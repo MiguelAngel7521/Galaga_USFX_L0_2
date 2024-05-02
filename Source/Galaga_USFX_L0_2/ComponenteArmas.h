@@ -5,10 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "NaveEnemiga.h"
+#include "NaveEnemigaBuilder.h"
 #include "ComponenteArmas.generated.h"
 
 UCLASS()
-class GALAGA_USFX_L0_2_API AComponenteArmas : public AActor
+class GALAGA_USFX_L0_2_API AComponenteArmas : public AActor, public INaveEnemigaBuilder
 {
 	GENERATED_BODY()
 	
@@ -16,7 +17,15 @@ public:
 	// Sets default values for this actor's properties
 	AComponenteArmas();
 
+
+
 	void DispararNave(ANaveEnemiga* Nave);
+	virtual void ConstruirNuevaNave() override;
+	virtual void ConstruirComponentesArmas() override;
+	virtual void ConstruirComponentesEscudos() override;
+	virtual void ConstruirComponentesEnergia() override;
+	virtual ANaveEnemiga* ObtenerNaveEnemiga() override;
+
 
 protected:
 	// Called when the game starts or when spawned

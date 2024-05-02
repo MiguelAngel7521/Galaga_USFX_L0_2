@@ -12,10 +12,9 @@ UCLASS()
 class GALAGA_USFX_L0_2_API ACazaBuilder : public AActor, public INaveEnemigaBuilder
 {
 	GENERATED_BODY()
+	public:
+		ACazaBuilder();
 	
-public:	
-	// Sets default values for this actor's properties
-	ACazaBuilder();
 
 protected:
 	// Called when the game starts or when spawned
@@ -24,20 +23,15 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-private:
+
 	ANaveEnemigaCaza* NaveEnemiga;
 
-public:
-	ACazaBuilder() { NaveEnemiga = nullptr; }
-	virtual ~ACazaBuilder() { delete NaveEnemiga; }
+	virtual void ConstruirNuevaNave() override;
+	virtual void ConstruirComponentesArmas() override ;
+	virtual void ConstruirComponentesEscudos() override ;
+	virtual void ConstruirComponentesEnergia() override ;
+	virtual ANaveEnemiga* ObtenerNaveEnemiga() override ;
 
-	virtual void ConstruirNuevaNave() override { NaveEnemiga = new ANaveEnemigaCaza(); }
-	virtual void ConstruirComponenteArmas() { }
-	virtual void ConstruirComponenteEscudo() { }
-	virtual void ConstruirComponenteEnergia()  { }
-	virtual ANaveEnemiga* ObtenerNaveEnemiga()  { return NaveEnemiga; }
-
-	
 };
 
 

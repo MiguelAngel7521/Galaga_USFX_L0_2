@@ -101,5 +101,29 @@ private:
 	bool bBombaSpawned;
 	TSubclassOf<class ABomba> BombaClass;
 
+protected:
+	int ContImpacto;
+public:
+	void recibirImpacto();
+
+	int VidasRestantes = 3;
+
+	int GetVidasRestantes() const { return VidasRestantes; }
+	void AumentarVida()
+	{
+		if (VidasRestantes > 0)
+			VidasRestantes++;
+	}
+	// Función para reducir una vida del pawn
+	void ReducirVida()
+	{
+		if (VidasRestantes > 0)
+			VidasRestantes--;
+	}
+
+	FVector posicionInicial;
+	void Energia();
+	FTimerHandle TimerHandle_Energia;
+
 };
 

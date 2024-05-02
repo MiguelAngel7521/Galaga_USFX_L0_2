@@ -261,4 +261,21 @@ void AGalaga_USFX_L0_2Pawn::ReducirEnergia(int32 Cantidad)
 	// Asegurarse de que la energía no baje de 0
 	EnergiaJugador = FMath::Max(0, EnergiaJugador);
 }
+void AGalaga_USFX_L0_2Pawn::recibirImpacto()
+{
+	ContImpacto++;
+	if (ContImpacto == 3)
+	{
+		ContImpacto = 0;
+		ReducirVida();
+	}
+}
+void AGalaga_USFX_L0_2Pawn::Energia()
+{
+	EnergiaJugador++;
+	if (EnergiaJugador > 10)
+	{
+		EnergiaJugador = 10;
+	}
+}
 

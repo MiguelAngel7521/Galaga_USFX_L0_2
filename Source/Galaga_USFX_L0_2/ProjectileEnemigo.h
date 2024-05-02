@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "ProjectileEnemigo.generated.h"
 
 class UProjectileMovementComponent;
@@ -15,25 +16,30 @@ class GALAGA_USFX_L0_2_API AProjectileEnemigo : public AActor
 	GENERATED_BODY()
 	
 public:
-    // Sets default values for this actor's properties
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* mallaProyectil;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	UProjectileMovementComponent* ProjectileMovement;
+
+	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
+	class USoundBase* FireSound;
+public:
+public:
+	// Sets default values for this actor's properties
     AProjectileEnemigo();
 
-    // Called every frame
-    virtual void Tick(float DeltaTime) override;
-
-    // Projectile movement component
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
-    class UProjectileMovementComponent* ProjectileMovement;
+	void FireInDirection(const FVector& ShootDirection);
+	void Fire();
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 protected:
-    // Called when the game starts or when spawned
-    virtual void BeginPlay() override;
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
 public:
-
-    UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
-    class UStaticMeshComponent* ProjectileMesh;
-
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-    UProjectileMovementComponent* ProjectileMovementComponent;
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	float Damage;
 };

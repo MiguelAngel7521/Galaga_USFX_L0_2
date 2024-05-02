@@ -22,7 +22,7 @@ class GALAGA_USFX_L0_2_API INaveEnemigaBuilder
 
 	
 public:
-	virtual ~INaveEnemigaBuilder() {};
+	
 	virtual void ConstruirNuevaNave() = 0;
 	virtual void ConstruirComponentesArmas() = 0;
 	virtual void ConstruirComponentesEscudos() = 0;

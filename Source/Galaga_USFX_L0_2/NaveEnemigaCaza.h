@@ -25,6 +25,10 @@ private:
 	int32 IndiceActual;
 	FVector Objetivo;
 	float Velocidad;
+
+	int cantidadBombas;
+	float tiempoExplosion = 0;
+	float TiempoTranscurrido = 0;
 public:
 	ANaveEnemigaCaza();
 	virtual void Tick(float DeltaTime) override;
@@ -33,10 +37,10 @@ public:
 	void DispararRayoLaser();
 	void DispararMisiles();
 	virtual void mover(float DeltaTime);
-
+	virtual void FireProjectile() override;	
 
 public:
-	virtual void Disparar(FVector FireDirection) override;
+	
 
 	UPROPERTY(EditAnywhere, Category = "Proyectil")
 	TSubclassOf<class AProjectileEnemigo> ProyectilEnemigoClass;
@@ -45,6 +49,7 @@ public:
 	float FireRate;
 
 	float FireCooldown;
+	
 
 	
 
