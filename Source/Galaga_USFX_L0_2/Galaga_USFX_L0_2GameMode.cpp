@@ -9,6 +9,11 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaEspia.h"
 #include "FabricaNaveEnemigas.h"
+#include "NaveEnemigaBuilder.h"
+#include "DirectorBuilder.h"
+#include "CazaBuilder.h"
+#include "ComponenteEscudo.h"
+#include "ComponenteArmas.h"
 
 
 AGalaga_USFX_L0_2GameMode::AGalaga_USFX_L0_2GameMode()
@@ -98,7 +103,10 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-
+	/*ADirectorBuilder director;*/
+	//ANaveEnemigaBuilder builder; // El nombre de esta clase depende de cómo lo implementes
+	/*director.setBuilder(&builder);*/
+	/*NaveEnemigaCaza* nave = director.construirNaveEnemiga();*/
 
 
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(0.0f, -500.0f, 200.0f);
@@ -120,12 +128,12 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 			
 		}
 
-		for (int i = 0; i < 5; i++)
+	/*	for (int i = 0; i < 5; i++)
 		{
 			ubicacionInicioNavesEnemigasTransporte = ubicacionInicioNavesEnemigasTransporte + FVector(0.0f, 200.0f, 0.0f);
 			ANaveEnemigaTransporte* NaveEnemigaTemporal = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionInicioNavesEnemigasTransporte, rotacionInicioNavesEnemigasTransporte);
 			
-		}
+		}*/
 
 	}
 }

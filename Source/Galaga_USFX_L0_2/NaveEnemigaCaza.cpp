@@ -147,17 +147,26 @@ void ANaveEnemigaCaza::DispararMisiles()
 }
 void ANaveEnemigaCaza::FireProjectile()
 {
-    if (FireCooldown <= 0.f)
+    AProjectileEnemigo* Projectile = GetWorld()->SpawnActor<AProjectileEnemigo>(AProjectileEnemigo::StaticClass(), GetActorLocation(), GetActorRotation());
+    if (Projectile)
     {
-		UWorld* const World = GetWorld();
-        if (World != nullptr)
-            {
-            FVector SpawnLocation = GetActorLocation();
-            SpawnLocation.X -= 200.0f;
-			World->SpawnActor<AProjectileEnemigo>(ProyectilEnemigoClass, GetActorLocation(), GetActorRotation());
-		}
-		FireCooldown = FireRate;
-	}
+        // Obtén la dirección hacia adelante de la nave enemiga
+        FVector ForwardDirection = GetActorForwardVector();
+
+        // Calcula la rotación basada en la dirección hacia adelante
+
+        FRotator SpawnRotation = ForwardDirection.Rotation();
+        
+
+        // Configura la posición y dirección del proyectil
+        FVector SpawnLocation = GetActorLocation();
+        SpawnLocation.X -= 200;
+
+        Projectile->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+
+        // Dispara el proyectil
+        Projectile->Fire();
+    }
 }
 
 

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_L0_2.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BB2A963D-B658-499D-A1C7-6399A93AEDDB}</UniqueIdentifier>
+      <UniqueIdentifier>{2255991C-24F4-4AA9-98ED-2F7487715A0B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_L0_2.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{19A6607F-4FFA-4832-ADBE-CB269150EB84}</UniqueIdentifier>
+      <UniqueIdentifier>{D2239DF0-ED27-4006-8642-92CF7F67A42A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_L0_2">
-      <UniqueIdentifier>{EC105BD5-560F-4DAD-93F7-B2DF3040ADEE}</UniqueIdentifier>
+      <UniqueIdentifier>{EEF86C40-9D95-4F6E-9CC3-7E257978C92C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\Bomba.cpp">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
@@ -62,6 +62,12 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ConstruirComponenteEnergia.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\DirectorBuilder.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\DirectorBuilder.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\FabricaNaveEnemigas.cpp">
@@ -139,6 +145,5 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ProjectileEnemigo.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

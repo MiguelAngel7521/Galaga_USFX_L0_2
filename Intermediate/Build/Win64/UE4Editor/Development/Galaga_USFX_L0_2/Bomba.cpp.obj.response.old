@@ -262,8 +262,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\Bomba.cpp"
-/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.h"
+/FI"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.Galaga_USFX_L0_2.h"
 /Fo"D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Bomba.cpp.obj"
 /TP
 /GR-

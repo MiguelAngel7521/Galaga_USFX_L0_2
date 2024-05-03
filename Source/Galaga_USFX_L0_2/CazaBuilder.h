@@ -27,9 +27,12 @@ public:
 	ANaveEnemigaCaza* NaveEnemiga;
 
 	virtual void ConstruirNuevaNave() override;
+	virtual void ConstruirMalla() override ;
+	virtual void ConstruirMotor() override ; 
 	virtual void ConstruirComponentesArmas() override ;
 	virtual void ConstruirComponentesEscudos() override ;
 	virtual void ConstruirComponentesEnergia() override ;
+	class UStaticMeshComponent* mallaCaza;
 	virtual ANaveEnemiga* ObtenerNaveEnemiga() override ;
 
 };

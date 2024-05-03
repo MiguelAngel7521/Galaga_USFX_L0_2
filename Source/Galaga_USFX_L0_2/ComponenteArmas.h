@@ -17,13 +17,19 @@ public:
 	// Sets default values for this actor's properties
 	AComponenteArmas();
 
+	AComponenteArmas* ComponenteArmas;	
 
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Arma")
+	UStaticMeshComponent* mallaArma;*/
 
 	void DispararNave(ANaveEnemiga* Nave);
 	virtual void ConstruirNuevaNave() override;
+	virtual void ConstruirMalla() override;
+	virtual void ConstruirMotor() override;
 	virtual void ConstruirComponentesArmas() override;
 	virtual void ConstruirComponentesEscudos() override;
 	virtual void ConstruirComponentesEnergia() override;
+
 	virtual ANaveEnemiga* ObtenerNaveEnemiga() override;
 
 

@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\proyectos\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2\\Galaga_USFX_L0_2.Build.cs",
-		"D:\\proyectos\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2.Target.cs",
-		"D:\\proyectos\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2Editor.Target.cs"
+		"C:\\Users\\Jorge\\source\\repos\\MiguelAngel7521\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2\\Galaga_USFX_L0_2.Build.cs",
+		"C:\\Users\\Jorge\\source\\repos\\MiguelAngel7521\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2.Target.cs",
+		"C:\\Users\\Jorge\\source\\repos\\MiguelAngel7521\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2Editor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

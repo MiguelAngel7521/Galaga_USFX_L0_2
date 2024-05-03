@@ -1,2 +1,0 @@
-D:\proyectos\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Definitions.Galaga_USFX_L0_2.h
-D:\proyectos\Galaga_USFX_L0_2\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2.h

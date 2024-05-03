@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "NaveEnemiga.h"
+#include "ComponenteArmas.h"
+#include "ComponenteEscudo.h"
+//#include "ComponenteEnergia.h"
 #include "NaveEnemigaCaza.generated.h"
 
 /**
@@ -29,6 +32,11 @@ private:
 	int cantidadBombas;
 	float tiempoExplosion = 0;
 	float TiempoTranscurrido = 0;
+
+	AComponenteArmas* ComponenteArmas;
+	AComponenteEscudo* ComponenteEscudo;
+	/*AComponenteEnergia* ComponenteEnergia;*/
+
 public:
 	ANaveEnemigaCaza();
 	virtual void Tick(float DeltaTime) override;
@@ -49,7 +57,8 @@ public:
 	float FireRate;
 
 	float FireCooldown;
-	
+	 void SetComponenteArmas(AComponenteArmas* ComponenteArmas);
+	 void SetComponenteEscudo(AComponenteEscudo* ComponenteEscudo);
 
 	
 

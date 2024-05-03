@@ -26,11 +26,22 @@ void ACazaBuilder::Tick(float DeltaTime)
 }
 void ACazaBuilder::ConstruirNuevaNave()
 {
-	NaveEnemiga =GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass());
-	NaveEnemiga->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
-	if (!NaveEnemiga) {
-		UE_LOG(LogTemp, Warning, TEXT("No se pudo construir la nave"));	
-	}
+	///*NaveEnemiga =GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass());
+	//NaveEnemiga->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
+	//if (!NaveEnemiga) {
+	//	UE_LOG(LogTemp, Warning, TEXT("No se pudo construir la nave"));	
+	//}*/
+}
+
+void ACazaBuilder::ConstruirMalla()
+{
+ //mallaCaza = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Caza"));
+ //RootComponent = mallaCaza;
+ //static ConstructorHelpers::FObjectFinder<UStaticMesh>mallaCaza(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
+}
+
+void ACazaBuilder::ConstruirMotor()
+{
 }
 
 void ACazaBuilder::ConstruirComponentesArmas()

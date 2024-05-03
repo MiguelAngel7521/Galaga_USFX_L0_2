@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeComponenteEscudo() {}
 	GALAGA_USFX_L0_2_API UClass* Z_Construct_UClass_AComponenteEscudo();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_L0_2();
+	GALAGA_USFX_L0_2_API UClass* Z_Construct_UClass_UNaveEnemigaBuilder_NoRegister();
 // End Cross Module References
 	void AComponenteEscudo::StaticRegisterNativesAComponenteEscudo()
 	{
@@ -31,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeComponenteEscudo() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +46,9 @@ void EmptyLinkFunctionForGeneratedCodeComponenteEscudo() {}
 		{ "ModuleRelativePath", "ComponenteEscudo.h" },
 	};
 #endif
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AComponenteEscudo_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UNaveEnemigaBuilder_NoRegister, (int32)VTABLE_OFFSET(AComponenteEscudo, INaveEnemigaBuilder), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AComponenteEscudo_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AComponenteEscudo>::IsAbstract,
 	};
@@ -54,11 +59,11 @@ void EmptyLinkFunctionForGeneratedCodeComponenteEscudo() {}
 		DependentSingletons,
 		nullptr,
 		nullptr,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AComponenteEscudo_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AComponenteEscudo_Statics::Class_MetaDataParams))
 	};
@@ -71,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeComponenteEscudo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AComponenteEscudo, 1446762008);
+	IMPLEMENT_CLASS(AComponenteEscudo, 917950340);
 	template<> GALAGA_USFX_L0_2_API UClass* StaticClass<AComponenteEscudo>()
 	{
 		return AComponenteEscudo::StaticClass();

@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Galaga_USFX_L0_2",
-			"Path": "D:\\proyectos\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2.Target.cs",
+			"Path": "C:\\Users\\Jorge\\source\\repos\\MiguelAngel7521\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "Galaga_USFX_L0_2Editor",
-			"Path": "D:\\proyectos\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2Editor.Target.cs",
+			"Path": "C:\\Users\\Jorge\\source\\repos\\MiguelAngel7521\\Galaga_USFX_L0_2\\Source\\Galaga_USFX_L0_2Editor.Target.cs",
 			"Type": "Editor"
 		}
 	]
