@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_L0_2.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2255991C-24F4-4AA9-98ED-2F7487715A0B}</UniqueIdentifier>
+      <UniqueIdentifier>{09EB597B-5C41-4436-991C-C97E21BD9D3D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_L0_2.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{D2239DF0-ED27-4006-8642-92CF7F67A42A}</UniqueIdentifier>
+      <UniqueIdentifier>{75E80618-20E0-46BA-9CC7-8719E39EDE99}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_L0_2">
-      <UniqueIdentifier>{EEF86C40-9D95-4F6E-9CC3-7E257978C92C}</UniqueIdentifier>
+      <UniqueIdentifier>{4B8661C2-96C2-47F4-8A69-187572F911AA}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\Bomba.cpp">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
@@ -56,6 +56,18 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ComponenteEscudo.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ConcretoBuilderPaquetesEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ConcretoBuilderPaquetesEnergia.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ConcretoPaquetesEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ConcretoPaquetesEnergia.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ConstruirComponenteEnergia.cpp">
@@ -101,6 +113,18 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Galaga_USFX_L0_2Projectile.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\IBuilderPaquetesEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\IBuilderPaquetesEnergia.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ISetPaquetesEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ISetPaquetesEnergia.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\NaveEnemiga.cpp">

@@ -51,7 +51,7 @@ void ANaveEnemiga::FireProjectile()
 
 		// Configura la posición y dirección del proyectil
 		FVector SpawnLocation = GetActorLocation();
-		SpawnLocation.X -= 200;
+		SpawnLocation.X += 200;
 		
 		Projectile->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
 

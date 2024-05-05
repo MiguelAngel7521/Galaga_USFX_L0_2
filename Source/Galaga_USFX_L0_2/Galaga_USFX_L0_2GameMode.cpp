@@ -110,10 +110,10 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 
 
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(0.0f, -500.0f, 200.0f);
-	FRotator rotacionInicioNavesEnemigasCaza = FRotator(0.0f, 0.0f, 0.0f);
+	FRotator rotacionInicioNavesEnemigasCaza = FRotator(0.0f, 180.0f, 0.0f);
 
 	FVector ubicacionInicioNavesEnemigasTransporte = FVector(300.0f, -500.0f, 200.0f);
-	FRotator rotacionInicioNavesEnemigasTransporte = FRotator(0.0f, 0.0f, 0.0f);
+	FRotator rotacionInicioNavesEnemigasTransporte = FRotator(0.0f, 180.0f, 0.0f);
 
 	FVector ubicacionInicioNavesAmigas = FVector(-1000.0f, -1000.0f, 200.0f);
 	FRotator rotacionInicioNavesAmigas = FRotator(0.0f, 0.0f, 0.0f);
