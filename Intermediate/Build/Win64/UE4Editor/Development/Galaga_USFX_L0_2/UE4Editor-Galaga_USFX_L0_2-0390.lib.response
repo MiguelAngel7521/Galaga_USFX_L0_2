@@ -8,6 +8,7 @@
 /NODEFAULTLIB
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\Galaga_USFX_L0_2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Bomba.cpp.obj"
+"C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Capsula.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\CazaBuilder.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\ComponenteArmas.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\ComponenteEscudo.cpp.obj"
@@ -30,6 +31,7 @@
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\NaveEnemigaTransporte.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\ProjectileEnemigo.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Bomba.gen.cpp.obj"
+"C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\Capsula.gen.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\CazaBuilder.gen.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\ComponenteArmas.gen.cpp.obj"
 "C:\Users\Jorge\source\repos\MiguelAngel7521\Galaga_USFX_L0_2\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L0_2\ComponenteEscudo.gen.cpp.obj"

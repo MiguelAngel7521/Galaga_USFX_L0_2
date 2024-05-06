@@ -8,6 +8,8 @@
 #include "NaveEnemigaCaza.h"
 #include "NaveEnemigaBuilder.h"
 #include "CazaBuilder.h"
+#include "ConcretoBuilderPaquetesEnergia.h"
+#include "DirectorPaquetesEnergia.h"
 #include "Galaga_USFX_L0_2GameMode.generated.h"
 
 UCLASS(MinimalAPI)
@@ -61,6 +63,8 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Clases")
 	TSubclassOf<class ANaveEnemigaTransporte> ClaseNaveEnemigaTransporte;
+public:
+	virtual void Tick(float DeltaTime) override;
 
 private:
 	FTimerHandle ManejadorTemporizador;
@@ -86,6 +90,16 @@ public:
 
 		ANaveEnemiga* ObtenerNaveEnemiga() { return Builder->ObtenerNaveEnemiga(); }
 	};
+private:
+	int32 Cont;
+	float TimerController;
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	AConcretoBuilderPaquetesEnergia* ConstructorPaquetesEnergia;
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	ADirectorPaquetesEnergia* Director;
+
 
 };
 

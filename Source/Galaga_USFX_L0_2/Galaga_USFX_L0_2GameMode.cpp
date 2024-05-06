@@ -64,7 +64,24 @@ void AGalaga_USFX_L0_2GameMode::DetenerProceso()
 	GetWorldTimerManager().ClearTimer(ManejadorCrearNaves);
 	GetWorldTimerManager().ClearTimer(ManejadorMostrarPosiciones);
 	GetWorldTimerManager().ClearTimer(ManejadorDetenerProceso);
-}	
+}
+void AGalaga_USFX_L0_2GameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	TimerController += DeltaTime;
+
+	if (TimerController >= 5.0f)
+	{
+		Director->ConstruirPaqueteEnergia(Cont);
+		TimerController = 0.0f;
+		Cont++;
+		if (Cont > 3)
+		{
+			Cont = 1;
+		}
+	}
+}
+
 
 void AGalaga_USFX_L0_2GameMode::CrearNavesEnemigas()
 {
@@ -107,6 +124,12 @@ void AGalaga_USFX_L0_2GameMode::BeginPlay()
 	//ANaveEnemigaBuilder builder; // El nombre de esta clase depende de cómo lo implementes
 	/*director.setBuilder(&builder);*/
 	/*NaveEnemigaCaza* nave = director.construirNaveEnemiga();*/
+
+
+
+	ConstructorPaquetesEnergia = GetWorld()->SpawnActor<AConcretoBuilderPaquetesEnergia>(AConcretoBuilderPaquetesEnergia::StaticClass());
+	Director = GetWorld()->SpawnActor<ADirectorPaquetesEnergia>(ADirectorPaquetesEnergia::StaticClass());
+	Director->EstablecerConstructorPaquetes(ConstructorPaquetesEnergia);
 
 
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(0.0f, -500.0f, 200.0f);

@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "Galaga_USFX_L0_2Pawn.generated.h"
 
 UCLASS(Blueprintable)
@@ -101,6 +102,12 @@ private:
 	bool bBombaSpawned;
 	TSubclassOf<class ABomba> BombaClass;
 
+
+	
+
+	
+
+
 protected:
 	int ContImpacto;
 public:
@@ -119,6 +126,15 @@ public:
 	{
 		if (VidasRestantes > 0)
 			VidasRestantes--;
+	}
+	void AumentarEnergia()
+	{
+		if (EnergiaJugador < 10)
+			EnergiaJugador++;
+	}
+	void AumentarVelocidad()
+	{
+			MoveSpeed += 300;
 	}
 
 	FVector posicionInicial;

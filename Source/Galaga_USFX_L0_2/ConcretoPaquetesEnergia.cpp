@@ -2,6 +2,9 @@
 
 
 #include "ConcretoPaquetesEnergia.h"
+#include "CapVelocidad.h"
+#include "CapEnergia.h"
+#include "CapVida.h"
 
 // Sets default values
 AConcretoPaquetesEnergia::AConcretoPaquetesEnergia()
@@ -27,13 +30,16 @@ void AConcretoPaquetesEnergia::Tick(float DeltaTime)
 
 void AConcretoPaquetesEnergia::SetPaqueteEnergia1()
 {
+	ACapVelocidad* CapVelocidad;
 }
 
 void AConcretoPaquetesEnergia::SetPaqueteEnergia2()
 {
+	ACapEnergia* CapEnergia;
 }
 
 void AConcretoPaquetesEnergia::SetPaqueteEnergia3()
 {
+	ACapVida* CapVida;
 }
 

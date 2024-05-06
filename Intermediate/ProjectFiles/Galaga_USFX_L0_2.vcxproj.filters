@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_L0_2.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{09EB597B-5C41-4436-991C-C97E21BD9D3D}</UniqueIdentifier>
+      <UniqueIdentifier>{35332C7C-A9B2-401D-85FC-495BE5D3803F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_L0_2.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{75E80618-20E0-46BA-9CC7-8719E39EDE99}</UniqueIdentifier>
+      <UniqueIdentifier>{D935DE65-7F73-44EF-99CD-07F3C78F8BB7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_L0_2">
-      <UniqueIdentifier>{4B8661C2-96C2-47F4-8A69-187572F911AA}</UniqueIdentifier>
+      <UniqueIdentifier>{6262D315-BEE3-4963-8576-52CF4CF19D31}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\Bomba.cpp">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
@@ -40,10 +40,52 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Bomba.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\CapEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\CapEnergia.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\Capsula.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\Capsula.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\CapVelocidad.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\CapVelocidad.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\CapVida.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\CapVida.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\CazaBuilder.cpp">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\CazaBuilder.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapEnergia.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapVelocidad.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapVelocidad.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapVida.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\ComEsCapVida.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\ComponenteArmas.cpp">
@@ -80,6 +122,12 @@
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\DirectorBuilder.h">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\DirectorPaquetesEnergia.cpp">
+      <Filter>Source\Galaga_USFX_L0_2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_L0_2\DirectorPaquetesEnergia.h">
       <Filter>Source\Galaga_USFX_L0_2</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_L0_2\FabricaNaveEnemigas.cpp">
